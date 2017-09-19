@@ -1,0 +1,90 @@
+<p>
+  Date Binding Class
+</p>
+
+<article>
+  <h3>Interpolation</h3>
+  <p>String renderizing: {{ name }}</p>
+  <p>The result of 1 + 1 is? {{ 1+1 }}</p>
+</article>
+
+<article>
+  <h3>Class and Style Binding</h3>
+  <div>
+      <select #selectValue (change)="0">
+        <option value="alert-success">Success</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Warning</option>
+        <option value="alert-danger">Error</option>
+      </select>
+  </div>
+  <br><br>
+
+  <div class="alert" role="alert" [class.alert-success]="selectValue.value == 'alert-success'">Success</div>
+  <div class="alert" role="alert" [class.alert-info]="selectValue.value == 'alert-info'">Info</div>
+  <div class="alert" role="alert" [class.alert-warning]="selectValue.value == 'alert-warning'">Warning</div>
+  <div class="alert" role="alert" [class.alert-danger]="selectValue.value == 'alert-danger'">Error</div>
+</article>
+
+<article>
+  <h3>Event Binding</h3>
+  <br>
+  <div>
+    <button (click)="buttonClick()" class="btn btn-primary">Click Here</button>
+    <br><br>
+    <input #inputField
+           (keyup)="inputKeyUp(inputField.value)"
+           (keyup.enter)="saveInputValue(inputField.value)" 
+           type="text">
+
+    <p>{{inputKeyUpValue}}</p>
+    <button (click)="saveInputValue(input.value)" class="btn btn-primary">Save</button>
+    <br><br>
+
+    <span (mouseover)="mouseOverOut()"
+          (mouseout)="mouseOverOut()"
+          [class.highlight]="isMouseOverOut">
+          Mouse Over / Mouse out
+        </span>
+  </div>
+  <br><br>
+</article>
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+
+        <input type="text"
+              [value]="twoWayDataBinding"
+              (input)="twoWayDataBinding = $event.target.value"
+        />
+
+        <input type="text" 
+              [ngModel]="twoWayDataBinding"
+              (ngModelChange)="twoWayDataBinding = $event"
+        />
+
+        <input type="text" [(ngModel)]="twoWayDataBinding" />
+
+        <p>Value included: {{twoWayDataBinding}}</p>
+
+        <div>
+          <input type="text"
+            [(ngModel)]="person.name"
+          />
+          <input type="text"
+            [(ngModel)]="person.age"
+          />
+
+          <p>My name is: {{person.name}} and i have {{person.age}} years old</p>
+
+          <button (click)="savePerson()" class="btn btn-primary">Save Person</button>
+
+        </div>
+
+    </div>
+  </article>
+</section>
+
+ 
