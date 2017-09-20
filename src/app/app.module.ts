@@ -9,13 +9,17 @@ import { FirstAutomaticComponentComponent } from './first-automatic/first-automa
 import { FirstModuleModule } from './first-module/first-module.module';
 import { MovieModule } from './movie/movie.module';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { InputPropertyComponent } from './input-property/input-property.component';
+import { OutputPropertyComponent } from './output-property/output-property.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     FirstAutomaticComponentComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    InputPropertyComponent,
+    OutputPropertyComponent
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,8 @@ export class DataBindingComponent implements OnInit {
     age: 26
   }
 
+  movieName: String = "IT";
+
   buttonClick() {
     alert("Button Clicked")
   }
