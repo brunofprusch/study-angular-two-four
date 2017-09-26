@@ -98,7 +98,7 @@
 
     <app-movie [movieName]="movieName"></app-movie>
 
-    <counter counterValue="10"></counter>
+    <counter counterValue="10" (changedValue)="onChangedValue($event)"></counter>
 
   </article>
 

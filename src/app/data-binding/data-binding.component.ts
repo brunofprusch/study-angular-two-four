@@ -38,6 +38,10 @@ export class DataBindingComponent implements OnInit {
     alert("Person saved! name: " + this.person.name + ", age: " + this.person.age);
   }
 
+  onChangedValue(event) {
+    console.log(event.newValue);
+  }
+
   constructor() { }
 
   ngOnInit() {  }
