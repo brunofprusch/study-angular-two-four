@@ -7,3 +7,6 @@
 <first-module></first-module>
 <movie-component></movie-component>
 <data-binding-component></data-binding-component>
+<lifecycle-component [initialValue]="lifecycleValue" *ngIf="!destryLifecycle"></lifecycle-component>
+<button (click)="changeLifecycleValue()" class="btn btn-primary">Change Value</button>
+<button (click)="destroyLifecycle()" class="btn btn-primary">Destroy Lifecycle</button>

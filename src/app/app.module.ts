@@ -11,6 +11,7 @@ import { MovieModule } from './movie/movie.module';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { InputPropertyComponent } from './input-property/input-property.component';
 import { OutputPropertyComponent } from './output-property/output-property.component';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { OutputPropertyComponent } from './output-property/output-property.compo
     FirstAutomaticComponentComponent,
     DataBindingComponent,
     InputPropertyComponent,
-    OutputPropertyComponent
+    OutputPropertyComponent,
+    LifecycleComponent
   ],
   imports: [
     BrowserModule,
