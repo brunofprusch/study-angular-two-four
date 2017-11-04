@@ -40,7 +40,7 @@
            type="text">
 
     <p>{{inputKeyUpValue}}</p>
-    <button (click)="saveInputValue(input.value)" class="btn btn-primary">Save</button>
+    <button (click)="saveInputValue(inputField.value)" class="btn btn-primary">Save</button>
     <br><br>
 
     <span (mouseover)="mouseOverOut()"
@@ -58,17 +58,22 @@
     <h3>Two-way data binding</h3>
     <div>
 
-        <input type="text"
+        <input #inputTextOne 
+              type="text"
               [value]="twoWayDataBinding"
-              (input)="twoWayDataBinding = $event.target.value"
+              (input)="twoWayDataBinding = inputTextOne.value"
         />
 
-        <input type="text" 
+        <input #inputTextTwo 
+              type="text" 
               [ngModel]="twoWayDataBinding"
               (ngModelChange)="twoWayDataBinding = $event"
         />
 
-        <input type="text" [(ngModel)]="twoWayDataBinding" />
+        <input #inputTextThree 
+              type="text" 
+              [(ngModel)]="twoWayDataBinding" 
+        />
 
         <p>Value included: {{twoWayDataBinding}}</p>
 
